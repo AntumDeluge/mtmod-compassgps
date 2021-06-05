@@ -60,12 +60,12 @@ local file = io.open(minetest.get_worldpath().."/bookmarks", "r")
 if file then
 	bookmarks = minetest.deserialize(file:read("*all"))
   -- check if it was an empty file because empty files can crash server
-	if bookmarks == nil then 
+	if bookmarks == nil then
 	  print("compassgps:ERROR:bookmarks file exists but is empty, will recreate")
 		print("compassgps: this will stop the server from crashing, but bookmarks are lost")
 		print("compassgps: please restore "..minetest.get_worldpath().."/bookmarks from a backup if possible")
 	  bookmarks = { }
-	end 
+	end
 	file:close()
 end
 
@@ -140,10 +140,10 @@ local file = io.open(minetest.get_worldpath().."/compassgps_settings", "r")
 if file then
 	settings = minetest.deserialize(file:read("*all"))
   -- check if it was an empty file because empty files can crash server
-	if settings == nil then 
+	if settings == nil then
 	  print("compassgps:ERROR:compassgps_setting file exists but is empty, will recreate")
 	  settings = { }
-	end 
+	end
 	file:close()
 end
 --now transfer these to the correct variables
@@ -1244,7 +1244,7 @@ function compassgps.get_compassgps_formspec(name)
     "textlist[0,3.0;8.8,6;bookmark_list;"..list..";"..bkmrkidx.."]"..
     "button[0,9.3;3.3,1;find_bookmark;"..S("Show selected bookmark").."]"..
     telebutton
-    
+
 end --get_compassgps_formspec
 
 
